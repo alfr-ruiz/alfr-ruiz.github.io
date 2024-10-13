@@ -1,0 +1,164 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Header Navigation */
+header {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff4757;
+}
+
+/* Hero Section */
+#home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(135deg, #1e1e1e, #2d3436);
+    text-align: center;
+}
+
+.intro h1 {
+    font-size: 3rem;
+    color: #f0f0f0;
+    animation: fadeIn 2s ease;
+}
+
+.intro h2 {
+    font-size: 1.5rem;
+    color: #ff4757;
+    animation: slideIn 2s ease;
+}
+
+.intro p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    animation: fadeIn 3s ease;
+}
+
+/* About and Project Sections */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    animation: reveal 1.5s ease;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+}
+
+/* Project Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background-color: #1e272e;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Contact Section */
+#contact a {
+    color: #ff4757;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #333;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
