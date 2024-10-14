@@ -2,58 +2,148 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>My Music Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Audio Engineering Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Inline CSS for simplicity and reduced file size -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        header, footer {
+            position: fixed;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        header {
+            top: 0;
+        }
+        footer {
+            bottom: 0;
+        }
+        .cta-button {
+            background-color: #ff4081;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e91e63;
+        }
+        .content {
+            padding: 100px 20px 60px 20px;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease-out;
+            margin-bottom: 50px;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .media-item {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .media-item img, .media-item video {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <div class="intro">
-            <h1>Hello, I'm Alfredo</h1>
-            <h2>Aspiring Pro Audio Engineer</h2>
-            <p>I'm passionate about audio engineering and production. Explore my work below.</p>
-        </div>
-    </section>
+<header>
+    <a href="#contact" class="cta-button">Contact Me</a>
+</header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>I am a self-taught audio engineer with experience in mixing, mastering, and recording. My goal is to work in a professional studio environment and bring out the best in every project.</p>
-    </section>
-
-    <section id="projects" class="section">
-        <h2>My Work</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Details about a mixing or mastering project.</p>
+<div class="content">
+    <!-- Songs Section -->
+    <div class="section" id="songs">
+        <h2>Songs</h2>
+        <div class="media-grid">
+            <!-- Repeat this block for each song -->
+            <div class="media-item">
+                <img src="song-cover1.jpg" alt="Song Cover">
+                <p>Song Title 1</p>
+                <!-- Audio player -->
+                <audio controls>
+                    <source src="song1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
             </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Details about another project, like audio composition or sound design.</p>
-            </div>
-            <!-- Add more project cards here -->
+            <!-- Add more song items as needed -->
         </div>
-    </section>
+    </div>
 
-    <section id="contact" class="section">
-        <h2>Contact Me</h2>
-        <p>Email me at: <a href="mailto:me@alfredorm.com">me@alfredorm.com</a></p>
-    </section>
+    <!-- Videos Section -->
+    <div class="section" id="videos">
+        <h2>Videos</h2>
+        <div class="media-grid">
+            <!-- Repeat this block for each video -->
+            <div class="media-item">
+                <video controls>
+                    <source src="video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Video Title 1</p>
+            </div>
+            <!-- Add more video items as needed -->
+        </div>
+    </div>
 
-    <footer>
-        <p>© 2024 Alfredo Ruiz-Malca. All rights reserved.</p>
-    </footer>
+    <!-- Additional sections can be added here -->
+</div>
+
+<footer>
+    <a href="#contact" class="cta-button">Get in Touch</a>
+</footer>
+
+<!-- Minimal JavaScript for scroll animations -->
+<script>
+    const sections = document.querySelectorAll('.section');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
 </body>
 </html>
