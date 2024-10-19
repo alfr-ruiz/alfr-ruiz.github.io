@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Contact - Your Website</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <div class="logo">Your Logo</div>
+        <div class="logo">alfredorm.com</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="listen.html">Listen</a></li>
@@ -19,26 +19,25 @@
         </ul>
     </nav>
 
-    <!-- Contact Form -->
-    <div class="content">
-        <h1>Contact Me</h1>
-        <form
-  action="https://formspree.io/f/xqakkrvv"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+<!-- Contact Form -->
+<div class="contact-container">
+  <div class="heading">
+      <h1>Contact Me</h1>
+  </div>
+  <div class="form">
+      <form action="https://formspree.io/f/xqakkrvv" method="POST">
+          <label>Your email:
+              <input type="email" name="email">
+          </label>
+          <br>
+          <label>Your message:
+              <textarea name="message"></textarea>
+          </label>
+          <br>
+          <button type="submit">Send</button>
+      </form>
+  </div>
+</div>
 
-</form>
-        </form>
-    </div>
 </body>
 </html>

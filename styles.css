@@ -14,6 +14,35 @@
     font-style: normal;
 }
 
+.contact-container {
+    display: flex;
+    justify-content: center; /* Adjusts the spacing between the two flex items */
+    align-items: center; /* Aligns items at the start of the container */
+    gap: 20px; /* Adds space between the flex items */
+    height: 100vh;
+    margin: 0; /* Optional margin to adjust spacing around the container */
+}
+
+.heading {
+    flex: 1; /* Ensures the heading takes up some space */
+    font-family: 'Sofia Pro Bold', sans-serif;
+    font-size: 12px;
+}
+
+.form {
+    flex: 2; /* Makes the form slightly larger than the heading */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Ensures the form elements stack vertically */
+    gap: 10px; /* Adds space between form elements */
+}
+
+button {
+    align-self: flex-start; /* Aligns the submit button to the left */
+}
+
 .haiku {
     display: flex;
     justify-content: center;
