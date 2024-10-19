@@ -1,14 +1,7 @@
-.centered-div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust based on your layout */
-}
-
 /* Import Sofia Pro Bold font */
 @font-face {
     font-family: 'Sofia Pro Bold';
-    src: url('fonts/sofia-pro/Sofia\ Pro\ Bold\ Az.otf') format('truetype');
+    src: url('fonts/sofia-pro/Sofia\ Pro\ Semi\ Bold\ Az.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -19,6 +12,13 @@
     src: url('fonts/minion-pro/MinionPro-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+.centered-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust based on your layout */
 }
 
 /* Apply background and text colors */
