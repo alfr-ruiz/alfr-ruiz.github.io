@@ -1,7 +1,7 @@
 /* Import Sofia Pro Bold font */
 @font-face {
     font-family: 'Sofia Pro Bold';
-    src: url('fonts/SofiaPro-Bold.ttf') format('truetype');
+    src: url('fonts/sofia-pro/Sofia\ Pro\ Bold\ Az.otf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
@@ -9,7 +9,7 @@
 /* Import Minion Pro font */
 @font-face {
     font-family: 'Minion Pro';
-    src: url('fonts/MinionPro-Regular.ttf') format('truetype');
+    src: url('fonts/minion-pro/MinionPro-Regular.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
