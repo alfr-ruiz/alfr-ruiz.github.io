@@ -1,0 +1,76 @@
+/* General reset to remove default margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and navigation */
+header {
+    background-color: #f9f9f9;
+    color: black;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #111111;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section styling */
+section {
+    padding: 2rem;
+    margin: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Merriweather', serif; /* Apply Merriweather for headings */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section h2 {
+    font-family: 'Merriweather', serif; /* Merriweather for section headings */
+    color: #111111;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f9f9f9;
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
