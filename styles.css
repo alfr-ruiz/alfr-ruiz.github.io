@@ -27,20 +27,24 @@
     flex: 1; /* Ensures the heading takes up some space */
     font-family: 'Sofia Pro Bold', sans-serif;
     font-size: 12px;
+    text-align: center;
 }
 
 .form {
     flex: 2; /* Makes the form slightly larger than the heading */
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column; /* Ensures the form elements stack vertically */
+    text-align: left;
     gap: 10px; /* Adds space between form elements */
 }
 
 button {
     align-self: flex-start; /* Aligns the submit button to the left */
+    text-align: center;
 }
 
 .haiku {
