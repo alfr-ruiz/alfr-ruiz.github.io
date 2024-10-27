@@ -133,6 +133,13 @@ input[type="text"], input[type="email"], textarea {
     box-sizing: border-box; /* Ensures padding does not affect total width */
 }
 
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none; /* Remove default blue outline */
+    border: 2px solid #C58383; /* Change border color to salmon */
+}
+
 /* Archive Tree Styling */
 .tree {
     --spacing: 1.5rem;
