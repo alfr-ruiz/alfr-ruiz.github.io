@@ -1,3 +1,4 @@
+/* Font Imports */
 @font-face {
     font-family: 'Sofia Pro Bold';
     src: url('fonts/sofia-pro/Sofia\ Pro\ Semi\ Bold\ Az.otf') format('truetype');
@@ -19,57 +20,21 @@
     font-style: normal;
 }
 
-.contact-container {
-    display: flex;
-    justify-content: center; /* Adjusts the spacing between the two flex items */
-    align-items: center; /* Aligns items at the start of the container */
-    gap: 20px; /* Adds space between the flex items */
-    height: 100vh;
-    margin: 0; /* Optional margin to adjust spacing around the container */
-}
-
-.heading {
-    flex: 1; /* Ensures the heading takes up some space */
-    font-family: 'Sofia Pro Bold', sans-serif;
-    font-size: 16px;
-    text-align: left;
-}
-
-.form {
-    flex: 2; /* Makes the form slightly larger than the heading */
-    text-align: center;
-}
-
-form {
-    font-family: 'Minion Pro', serif; /* Apply Minion Pro to all form elements */
-    display: flex;
-    flex-direction: column; /* Ensures the form elements stack vertically */
-    text-align: left;
-    gap: 10px; /* Adds space between form elements */
-    font-family: 'Minion Pro', serif; /* Ensure the button uses the same font as the form */
-    font-weight: normal; /* Adjust the weight to match "Your Email" */
-}
-
-button {
-    align-self: flex-start; /* Aligns the submit button to the left */
-    text-align: center;
-    font-family: 'Minion Pro', serif; /* Ensure the button uses the same font as the form */
-    font-weight: normal; /* Adjust the weight to match "Your Email" */
-}
-
+/* General Body Styling */
 body {
     background-color: #f9f9f9;
     color: #1B1212;
     margin: 0;
+    padding: 20px;
     font-family: 'Minion Pro', serif;
 }
 
+/* Navigation Bar Styling */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f9f9f9;
-    color:#1B1212;
     padding: 20px 60px;
 }
 
@@ -86,7 +51,7 @@ nav {
 }
 
 .logo:hover {
-    color: #1B1212;
+    color: #696;
     cursor: pointer;
 }
 
@@ -111,15 +76,129 @@ nav {
     color: #C58383;
 }
 
+/* Contact Form Container */
 .contact-container {
     display: flex;
-    flex-direction: row; /* Stack the heading and form vertically */
-    align-items: flex-start; /* Align items to the top-left */
-    padding: 40px 60px; /* Add padding for spacing */
-    gap: 20px; /* Add space between heading and form */
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 20px;
+    height: 100vh;
+    padding: 40px 60px;
 }
 
+.heading {
+    flex: 1;
+    font-family: 'Sofia Pro Bold', sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
 
+.form {
+    flex: 2;
+    text-align: center;
+}
+
+form {
+    font-family: 'Minion Pro', serif;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    font-weight: normal;
+}
+
+button {
+    align-self: flex-start;
+    text-align: center;
+    font-family: 'Minion Pro', serif;
+    font-weight: normal;
+}
+
+/* Archive Tree Styling */
+.tree {
+    --spacing: 1.5rem;
+    --radius: 10px;
+    margin: 0 auto;
+    padding: 20px 72px;
+    max-width: 800px;
+    font-family: 'OCR-A BT', sans-serif;
+    font-size: 18px;
+    text-align: left;
+}
+
+.tree li {
+    display: block;
+    position: relative;
+    padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+}
+
+.tree ul {
+    margin-left: calc(var(--radius) - var(--spacing));
+    padding-left: 0;
+}
+
+.tree ul li {
+    border-left: 2px solid #ddd;
+}
+
+.tree ul li:last-child {
+    border-color: transparent;
+}
+
+.tree ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(var(--spacing) / -2);
+    left: -2px;
+    width: calc(var(--spacing) + 2px);
+    height: calc(var(--spacing) + 1px);
+    border: solid #ddd;
+    border-width: 0 0 2px 2px;
+}
+
+.tree summary {
+    display: block;
+    cursor: pointer;
+}
+
+.tree summary::marker,
+.tree summary::-webkit-details-marker {
+    display: none;
+}
+
+.tree summary:focus {
+    outline: none;
+}
+
+.tree summary:focus-visible {
+    outline: 1px dotted #000;
+}
+
+.tree li::after,
+.tree summary::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: calc(var(--spacing) / 2 - var(--radius));
+    left: calc(var(--spacing) - var(--radius) - 1px);
+    width: calc(2 * var(--radius));
+    height: calc(2 * var(--radius));
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.tree summary::before {
+    z-index: 1;
+    background: #696 url('expand-collapse.svg') 0 0;
+}
+
+.tree details[open] > summary::before {
+    background-position: calc(-2 * var(--radius)) 0;
+}
+
+/* Content Headings */
 .content h1 {
     font-family: 'Sofia Pro Bold', sans-serif;
 }
