@@ -27,6 +27,23 @@ body {
     margin: 0;
     padding: 20px;
     font-family: 'Minion Pro', serif;
+    font-size: 16px; /* Default font size for desktop */
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Slightly larger font size for tablets/mobile */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Increase headings size for readability */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 20px; /* Even larger font size for smaller mobile screens */
+    }
 }
 
 a:visited {
