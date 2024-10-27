@@ -46,8 +46,13 @@ body {
     }
 }
 
+a {
+    color: #C58383; /* Set all anchor links to the salmon color */
+    text-decoration: none; /* Remove underline if desired */
+}
+
 a:visited {
-    color: #C58383; /* Set the color to the same salmon color as your logo */
+    color: #C58383; /* Keep the salmon color when the link is visited */
 }
 
 /* Navigation Bar Styling */
