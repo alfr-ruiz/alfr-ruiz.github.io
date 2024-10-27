@@ -2,11 +2,10 @@ Portfolio to get me into a major recording studio.
 
 To-Do:
 1. externally host audio and video files using the Internet Archive
-2. HTML to embed files into home page
+2. HTML to embed media files into home page
 3. use Vanilla JS to create a custom GUI for the media player
-4. JS for dynamic content loading, page transitions, scrolling fx, media lightbox
-5. fix: when clicking on logo to return home, address bar defaults to https://www.alfredorm.com/index.html instead of alfredorm.com
-6. at the home screen and when returning to it, the address bar should only show the apex domain
+4. JS for dynamic content loading & media lightbox
+5. fix: at the home screen AND when returning to it, the address bar should only show the apex domain
 
 Credits:
 
