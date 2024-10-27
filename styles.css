@@ -29,6 +29,10 @@ body {
     font-family: 'Minion Pro', serif;
 }
 
+a:visited {
+    color: #C58383; /* Set the color to the same salmon color as your logo */
+}
+
 /* Navigation Bar Styling */
 nav {
     display: flex;
@@ -95,8 +99,12 @@ nav {
 }
 
 .form {
-    flex: 2;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form elements horizontally */
+    width: 100%;
+    max-width: 500px; /* Prevents the form from stretching too wide */
+    margin: 0 auto; /* Centers the form on the page */
 }
 
 form {
@@ -113,6 +121,16 @@ button {
     text-align: center;
     font-family: 'Minion Pro', serif;
     font-weight: normal;
+}
+
+input[type="text"], input[type="email"], textarea {
+    font-family: 'Minion Pro', serif;
+    font-size: 16px; /* Adjust as needed for consistency */
+    color: #1B1212; /* Match the body text color */
+    width: 100%; /* Takes full width of the container */
+    margin-bottom: 15px; /* Adds space between fields */
+    padding: 10px; /* Adds padding inside the fields for comfort */
+    box-sizing: border-box; /* Ensures padding does not affect total width */
 }
 
 /* Archive Tree Styling */
