@@ -55,6 +55,10 @@ a:visited {
     color: #C58383; /* Keep the salmon color when the link is visited */
 }
 
+a:hover {
+    color: #b26d6d; /* Slightly darker salmon for hover effect */
+}
+
 /* Navigation Bar Styling */
 nav {
     display: flex;
