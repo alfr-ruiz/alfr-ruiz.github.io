@@ -140,6 +140,23 @@ button {
     font-weight: normal;
 }
 
+#send-button {
+    background-color: #C58383; /* Salmon color */
+    color: white; /* Text color for contrast */
+    border: none; /* Remove default border */
+    border-radius: 0; /* Rectangular shape */
+    width: 100%; /* Full width of the form */
+    padding: 15px 0; /* Padding for height */
+    font-family: 'Sofia Pro Bold', sans-serif; /* Consistent styling with rest of the page */
+    font-size: 16px; /* Adjust font size for readability */
+    cursor: pointer; /* Changes cursor to pointer */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#send-button:hover {
+    background-color: #b26d6d; /* Slightly darker shade on hover */
+}
+
 input[type="text"], input[type="email"], textarea {
     font-family: 'Minion Pro', serif;
     font-size: 16px; /* Adjust as needed for consistency */
