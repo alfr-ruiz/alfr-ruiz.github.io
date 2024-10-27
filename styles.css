@@ -1,4 +1,3 @@
-/* Import Sofia Pro Bold font */
 @font-face {
     font-family: 'Sofia Pro Bold';
     src: url('fonts/sofia-pro/Sofia\ Pro\ Semi\ Bold\ Az.otf') format('truetype');
@@ -6,10 +5,16 @@
     font-style: normal;
 }
 
-/* Import Minion Pro font */
 @font-face {
     font-family: 'Minion Pro';
     src: url('fonts/minion-pro/MinionPro-Regular.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OCR-A BT';
+    src: url('fonts/OCR-A_BT.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,8 +31,8 @@
 .heading {
     flex: 1; /* Ensures the heading takes up some space */
     font-family: 'Sofia Pro Bold', sans-serif;
-    font-size: 12px;
-    text-align: center;
+    font-size: 16px;
+    text-align: left;
 }
 
 .form {
@@ -36,26 +41,22 @@
 }
 
 form {
+    font-family: 'Minion Pro', serif; /* Apply Minion Pro to all form elements */
     display: flex;
     flex-direction: column; /* Ensures the form elements stack vertically */
     text-align: left;
     gap: 10px; /* Adds space between form elements */
+    font-family: 'Minion Pro', serif; /* Ensure the button uses the same font as the form */
+    font-weight: normal; /* Adjust the weight to match "Your Email" */
 }
 
 button {
     align-self: flex-start; /* Aligns the submit button to the left */
     text-align: center;
+    font-family: 'Minion Pro', serif; /* Ensure the button uses the same font as the form */
+    font-weight: normal; /* Adjust the weight to match "Your Email" */
 }
 
-.haiku {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 100vh; /* Adjust based on your layout */
-}
-
-/* Apply background and text colors */
 body {
     background-color: #f9f9f9;
     color: #1B1212;
@@ -63,19 +64,30 @@ body {
     font-family: 'Minion Pro', serif;
 }
 
-/* Navigation Bar Styles */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #f9f9f9;
     color:#1B1212;
-    padding: 0 20px;
+    padding: 20px 60px;
 }
 
 .logo {
-    font-family: 'Sofia Pro Bold', sans-serif;
-    font-size: 24px;
+    font-family: 'OCR-A BT', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: #C58383;
+    transition: color 0.22s ease;
+}
+
+.logo:visited {
+    color: #C58383;
+}
+
+.logo:hover {
+    color: #1B1212;
+    cursor: pointer;
 }
 
 .nav-links {
@@ -91,22 +103,29 @@ nav {
     text-decoration: none;
     color: #1B1212;
     font-family: 'Sofia Pro Bold', sans-serif;
-    font-weight: bold;
+    font-size: 17px;
+    transition: color 0.22s ease;
 }
 
-/* Header Image Styles */
-.header-image img {
-    width: 100%;
-    height: auto;
+.nav-links a:hover {
+    color: #C58383;
 }
 
-/* Content Styles */
-.content {
-    padding: 20px;
+.contact-container {
+    display: flex;
+    flex-direction: row; /* Stack the heading and form vertically */
+    align-items: flex-start; /* Align items to the top-left */
+    padding: 40px 60px; /* Add padding for spacing */
+    gap: 20px; /* Add space between heading and form */
 }
+
 
 .content h1 {
     font-family: 'Sofia Pro Bold', sans-serif;
+}
+
+.content h2 {
+    font-family: 'OCR-A BT', sans-serif;
 }
 
 .content p {
