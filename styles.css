@@ -39,11 +39,52 @@ body {
     h1, h2, h3 {
         font-size: 1.75em;
     }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .tree {
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .tree li {
+        padding-left: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     body {
         font-size: 20px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .nav-links a {
+        font-size: 22px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .tree {
+        padding: 10px;
     }
 }
 
@@ -68,6 +109,10 @@ nav {
     align-items: center;
     background-color: #f9f9f9;
     padding: 20px 60px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -102,6 +147,8 @@ nav {
     font-family: 'Sofia Pro Bold', sans-serif;
     font-size: 17px;
     transition: color 0.22s ease;
+    height: 40px; /* Improved tap target */
+    line-height: 40px;
 }
 
 .nav-links a:hover {
