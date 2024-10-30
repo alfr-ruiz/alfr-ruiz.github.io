@@ -6,7 +6,7 @@ To-Do:
 3. externally host audio and video files using the Internet Archive
 4. HTML to embed media files into home page
 5. use Vanilla JS to create a custom GUI for the media player
-6. JS for dynamic content loading & media lightbox 
+6. JS for dynamic content loading & media lightbox
 
 Credits:
 

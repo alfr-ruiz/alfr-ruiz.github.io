@@ -20,43 +20,45 @@
     font-style: normal;
 }
 
-/* General Body Styling */
+/* General Styling */
 body {
     background-color: #f9f9f9;
     color: #1B1212;
     margin: 0;
     padding: 20px;
     font-family: 'Minion Pro', serif;
-    font-size: 16px; /* Default font size for desktop */
+    font-size: 16px;
 }
 
+/* Responsive Styling */
 @media (max-width: 768px) {
     body {
-        font-size: 18px; /* Slightly larger font size for tablets/mobile */
+        font-size: 18px;
     }
-
+    
     h1, h2, h3 {
-        font-size: 1.75em; /* Increase headings size for readability */
+        font-size: 1.75em;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 20px; /* Even larger font size for smaller mobile screens */
+        font-size: 20px;
     }
 }
 
+/* Link Styling */
 a {
-    color: #C58383; /* Set all anchor links to the salmon color */
-    text-decoration: none; /* Remove underline if desired */
+    color: #C58383;
+    text-decoration: none;
 }
 
 a:visited {
-    color: #C58383; /* Keep the salmon color when the link is visited */
+    color: #C58383;
 }
 
 a:hover {
-    color: #b26d6d; /* Slightly darker salmon for hover effect */
+    color: #b26d6d;
 }
 
 /* Navigation Bar Styling */
@@ -106,7 +108,7 @@ nav {
     color: #C58383;
 }
 
-/* Contact Form Container */
+/* Contact Form Styling */
 .contact-container {
     display: flex;
     justify-content: center;
@@ -127,10 +129,10 @@ nav {
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the form elements horizontally */
+    align-items: center;
     width: 100%;
-    max-width: 500px; /* Prevents the form from stretching too wide */
-    margin: 0 auto; /* Centers the form on the page */
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 form {
@@ -142,45 +144,38 @@ form {
     font-weight: normal;
 }
 
-button {
-    align-self: flex-start;
-    text-align: center;
-    font-family: 'Minion Pro', serif;
-    font-weight: normal;
-}
-
-#send-button {
-    background-color: #C58383; /* Salmon color */
-    color: white; /* Text color for contrast */
-    border: none; /* Remove default border */
-    border-radius: 0; /* Rectangular shape */
-    width: 100%; /* Full width of the form */
-    padding: 15px 0; /* Padding for height */
-    font-family: 'Sofia Pro Bold', sans-serif; /* Consistent styling with rest of the page */
-    font-size: 16px; /* Adjust font size for readability */
-    cursor: pointer; /* Changes cursor to pointer */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#send-button:hover {
-    background-color: #b26d6d; /* Slightly darker shade on hover */
-}
-
 input[type="text"], input[type="email"], textarea {
     font-family: 'Minion Pro', serif;
-    font-size: 16px; /* Adjust as needed for consistency */
-    color: #1B1212; /* Match the body text color */
-    width: 100%; /* Takes full width of the container */
-    margin-bottom: 15px; /* Adds space between fields */
-    padding: 10px; /* Adds padding inside the fields for comfort */
-    box-sizing: border-box; /* Ensures padding does not affect total width */
+    font-size: 16px;
+    color: #1B1212;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-    outline: none; /* Remove default blue outline */
-    border: 2px solid #C58383; /* Change border color to salmon */
+    outline: none;
+    border: 2px solid #C58383;
+}
+
+#send-button {
+    background-color: #C58383;
+    color: white;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    padding: 15px 0;
+    font-family: 'Sofia Pro Bold', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+    background-color: #b26d6d;
 }
 
 /* Archive Tree Styling */
@@ -266,7 +261,7 @@ textarea:focus {
     background-position: calc(-2 * var(--radius)) 0;
 }
 
-/* Content Headings */
+/* Content Headings Styling */
 .content h1 {
     font-family: 'Sofia Pro Bold', sans-serif;
 }
