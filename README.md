@@ -7,6 +7,7 @@ To-Do:
 4. HTML to embed media files into home page
 5. use Vanilla JS to create a custom GUI for the media player
 6. JS for dynamic content loading & media lightbox
+7. add lilypond scores in archive. scores page. find old scores, transcribe them.
 
 Credits:
 
