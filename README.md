@@ -11,7 +11,7 @@ To-Do:
 
 Credits:
 
-Formatting: https://nav.al/, https://www.tetragrammaton.com/
+Formatting: https://tonymaserati.com/, https://nav.al/, https://www.tetragrammaton.com/
 Fonts: https://fs.blog/
 Trees: https://iamkate.com/code/tree-views/
 Colors: https://colorkit.co/color/1b1212/
