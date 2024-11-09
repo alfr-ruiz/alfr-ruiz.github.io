@@ -26,24 +26,97 @@ body {
     color: #1B1212;
     margin: 0;
     padding: 20px;
+    padding-top: 80px;
     font-family: 'Minion Pro', serif;
     font-size: 16px;
+    overflow-x: hidden;
+}
+
+/* Homepage specific centering */
+.home-page {
+    text-align: center;
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+/* Content Section Styling */
+.content-section {
+    min-height: auto;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section:not(.intro) {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.content-section:not(:first-child) {
+    margin-top: 40px;
 }
 
 /* Responsive Styling */
 @media (max-width: 768px) {
     body {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 10px;
+        padding-top: 70px;
     }
     
     h1, h2, h3 {
-        font-size: 1.75em;
+        font-size: 1.5em;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+
+    #profile-image {
+        width: 300px !important;
+        height: 300px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    nav {
+        padding: 20px 40px !important;
+    }
+
+    .contact-container {
+        padding: 20px !important;
+    }
+
+    .tree {
+        padding: 20px !important;
+        font-size: 16px !important;
+    }
+
+    .content {
+        padding: 20px !important;
     }
 }
 
 @media (max-width: 480px) {
     body {
-        font-size: 20px;
+        font-size: 16px;
+    }
+
+    #profile-image {
+        width: 250px !important;
+        height: 250px !important;
+    }
+
+    nav {
+        padding: 20px 30px !important;
     }
 }
 
@@ -51,10 +124,6 @@ body {
 a {
     color: #C58383;
     text-decoration: none;
-}
-
-a:visited {
-    color: #C58383;
 }
 
 a:hover {
@@ -68,6 +137,18 @@ nav {
     align-items: center;
     background-color: #f9f9f9;
     padding: 20px 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+    height: 60px;
+}
+
+.nav-scrolled {
+    background-color: rgba(249, 249, 249, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -78,10 +159,6 @@ nav {
     transition: color 0.22s ease;
 }
 
-.logo:visited {
-    color: #C58383;
-}
-
 .logo:hover {
     color: #1B1212;
     cursor: pointer;
@@ -90,6 +167,8 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
@@ -111,27 +190,24 @@ nav {
 /* Contact Form Styling */
 .contact-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
-    gap: 20px;
-    height: 100vh;
-    padding: 40px 60px;
+    flex-direction: column;
+    gap: 40px;
+    min-height: calc(100vh - 80px);
+    padding: 60px 80px;
+    max-width: 1000px;
+    margin: 40px auto 0;
 }
 
 .heading {
-    flex: 1;
     font-family: 'Sofia Pro Bold', sans-serif;
     font-size: 16px;
-    text-align: left;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -139,8 +215,7 @@ form {
     font-family: 'Minion Pro', serif;
     display: flex;
     flex-direction: column;
-    text-align: left;
-    gap: 10px;
+    gap: 20px;
     font-weight: normal;
 }
 
@@ -149,9 +224,10 @@ input[type="text"], input[type="email"], textarea {
     font-size: 16px;
     color: #1B1212;
     width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
+    padding: 15px;
     box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 input[type="text"]:focus,
@@ -165,9 +241,9 @@ textarea:focus {
     background-color: #C58383;
     color: white;
     border: none;
-    border-radius: 0;
+    border-radius: 4px;
     width: 100%;
-    padding: 15px 0;
+    padding: 20px 0;
     font-family: 'Sofia Pro Bold', sans-serif;
     font-size: 16px;
     cursor: pointer;
@@ -180,20 +256,20 @@ textarea:focus {
 
 /* Archive Tree Styling */
 .tree {
-    --spacing: 1.5rem;
-    --radius: 10px;
-    margin: 0 auto;
-    padding: 20px 72px;
-    max-width: 800px;
+    --spacing: 2rem;
+    --radius: 12px;
+    margin: 40px auto;
+    padding: 40px 80px;
+    max-width: 1000px;
     font-family: 'OCR-A BT', sans-serif;
-    font-size: 18px;
-    text-align: left;
+    font-size: 16px;
 }
 
 .tree li {
     display: block;
     position: relative;
     padding-left: calc(2 * var(--spacing) - var(--radius) - 2px);
+    margin-bottom: 15px;
 }
 
 .tree ul {
@@ -224,6 +300,7 @@ textarea:focus {
 .tree summary {
     display: block;
     cursor: pointer;
+    padding: 10px 0;
 }
 
 .tree summary::marker,
@@ -264,12 +341,148 @@ textarea:focus {
 /* Content Headings Styling */
 .content h1 {
     font-family: 'Sofia Pro Bold', sans-serif;
+    font-size: 16px;
 }
 
 .content h2 {
     font-family: 'OCR-A BT', sans-serif;
+    font-size: 16px;
 }
 
 .content p {
     font-family: 'Minion Pro', serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Update content styling */
+.content {
+    padding: 20px 200px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Update profile image styling */
+#profile-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Add playlist grid styling */
+.playlist-grid {
+    display: block;
+}
+
+.playlist-link {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.playlist-link img {
+    width: 100%;
+    max-width: 800px; /* Limit image width */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.playlist-link h3 {
+    margin-top: 10px;
+}
+
+/* Add missing media element styles */
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+}
+
+.audio-wrapper audio {
+    width: 100%;
+}
+
+/* Update playlist styling */
+.playlist-grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Remove duplicate transitions */
+.content-section {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Clean up media queries by combining duplicate rules */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        padding-top: 70px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    #profile-image {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    nav {
+        padding: 20px 40px;
+    }
+
+    .content-section {
+        padding: 20px;
+    }
+}
+
+/* Remove duplicate media query */
+@media (max-width: 480px) {
+    #profile-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    nav {
+        padding: 20px 30px;
+    }
+}
+
+/* Update divider spacing */
+.divider {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+    clear: both;
+}
+
+/* Update media container spacing */
+.media-container {
+    margin-bottom: 20px;
+}
+
+/* Update featured work section spacing */
+.featured-work {
+    padding-top: 20px;
+}
+
+/* Add date styling if not already present */
+.date {
+    color: #666;
+    font-size: 14px;
+    margin: 5px 0 15px 0;
+    font-family: 'Minion Pro', serif;
+}
+
+/* Update playlist link spacing */
+.playlist-link {
+    display: block;
+    margin-top: 10px;
 }

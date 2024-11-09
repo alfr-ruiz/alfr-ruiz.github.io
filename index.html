@@ -3,13 +3,63 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alfredo</title>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Day/Night Image Rotation Script -->
+    <script>
+        function updateProfileImage() {
+            const currentHour = new Date().getHours();
+            const isDaytime = currentHour >= 6 && currentHour < 18;
+            
+            const imageSrc = isDaytime 
+                ? '/images/Ancient_of_Days.jpg'
+                : '/images/Poker_Sympathy.jpg';
+                
+            document.getElementById('profile-image').src = imageSrc;
+        }
+
+        // Initialize and set up timer
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProfileImage();
+            setInterval(updateProfileImage, 60000); // Check every minute
+        });
+    </script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            // Initial state
+            contentSections.forEach(section => {
+                if (!section.classList.contains('intro')) {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(50px)';
+                }
+            });
+
+            // Scroll handler
+            window.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const viewportHeight = window.innerHeight;
+
+                contentSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const isVisible = scrollPosition > sectionTop - viewportHeight + 200;
+
+                    section.style.opacity = isVisible ? '1' : (section.classList.contains('intro') ? '1' : '0');
+                    section.style.transform = isVisible ? 'translateY(0)' : (section.classList.contains('intro') ? 'translateY(0)' : 'translateY(50px)');
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
         <a href="/" class="logo">Alfredo</a>
         <ul class="nav-links">
@@ -18,8 +68,124 @@
         </ul>
     </nav>
 
-    <!-- Main Content (currently empty) -->
-    
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Profile Section -->
+        <section class="content-section intro">
+            <img id="profile-image" 
+                 alt="Alfredo - Sound Designer & Music Producer">
+        </section>
+
+        <hr class="divider">
+
+        <!-- Portfolio Section -->
+        <section class="featured-work">
+            <!-- Video Reel -->
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Sound Design Reel</h3>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="https://drive.google.com/uc?export=download&id=your-file-id" type="video/mp4">
+                        Your browser does not support video playback.
+                    </video>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Audio Samples -->
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Gosh</h3>
+                <p class="date">November 7, 2024</p>
+                <div class="audio-wrapper">
+                    <audio controls>
+                        <source src="https://drive.google.com/uc?export=download&id=1b2rJY4D7c5hKlZQATxmAkOxq5c1Amff6" type="audio/flac">
+                        Your browser does not support audio playback.
+                    </audio>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Urban Rhythms</h3>
+                <p class="date">November 7, 2024</p>
+                <div class="audio-wrapper">
+                    <audio controls>
+                        <source src="https://drive.google.com/uc?export=download&id=your-audio-id-2" type="audio/flac">
+                        Your browser does not support audio playback.
+                    </audio>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Ambient Textures</h3>
+                <p class="date">November 7, 2024</p>
+                <div class="audio-wrapper">
+                    <audio controls>
+                        <source src="https://drive.google.com/uc?export=download&id=your-audio-id-3" type="audio/flac">
+                        Your browser does not support audio playback.
+                    </audio>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Electronic Suite</h3>
+                <p class="date">November 7, 2024</p>
+                <div class="audio-wrapper">
+                    <audio controls>
+                        <source src="https://drive.google.com/uc?export=download&id=your-audio-id-4" type="audio/flac">
+                        Your browser does not support audio playback.
+                    </audio>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <!-- Playlist Grid -->
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Production Portfolio</h3>
+                <p class="date">November 7, 2024</p>
+                <a href="/playlists/production-portfolio" class="playlist-link">
+                    <img src="/images/playlist-covers/production-portfolio.jpg" alt="Production Portfolio Playlist">
+                </a>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Electronic Works</h3>
+                <p class="date">November 7, 2024</p>
+                <a href="/playlists/electronic-works" class="playlist-link">
+                    <img src="/images/playlist-covers/electronic-works.jpg" alt="Electronic Works Playlist">
+                </a>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Sound Design</h3>
+                <p class="date">November 7, 2024</p>
+                <a href="/playlists/sound-design" class="playlist-link">
+                    <img src="/images/playlist-covers/sound-design.jpg" alt="Sound Design Playlist">
+                </a>
+            </div>
+
+            <hr class="divider">
+
+            <div class="content-section media-container">
+                <h3 class="minion-pro">Experimental</h3>
+                <p class="date">November 7, 2024</p>
+                <a href="/playlists/experimental" class="playlist-link">
+                    <img src="/images/playlist-covers/experimental.jpg" alt="Experimental Playlist">
+                </a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
