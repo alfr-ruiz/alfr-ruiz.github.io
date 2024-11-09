@@ -451,7 +451,9 @@ textarea:focus {
         padding-top: 70px;
     }
 
-    .content {
+    .content,
+    .contact-container,
+    .tree {
         padding: 20px;
     }
 
@@ -469,18 +471,87 @@ textarea:focus {
     .content-section {
         padding: 20px;
     }
+
+    /* Form and tree specific mobile styles */
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    .form,
+    #send-button {
+        font-size: 16px;
+    }
+
+    .tree {
+        --spacing: 1.5rem;
+        margin: 20px auto;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
 }
 
-/* Remove duplicate media query */
 @media (max-width: 480px) {
+    .content,
+    .contact-container,
+    .tree {
+        padding: 15px;
+    }
+
     #profile-image {
         width: 250px;
         height: 250px;
     }
 
     nav {
-        padding: 20px 30px;
+        padding: 15px 20px;
     }
+}
+
+/* Remove duplicate container sizing rules */
+.content,
+.contact-container,
+.tree {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 200px;
+}
+
+/* Remove duplicate tree spacing variables */
+.tree {
+    --spacing: 2.5rem;
+    --radius: 12px;
+    font-family: 'OCR-A BT', sans-serif;
+    font-size: 16px;
+}
+
+/* Remove duplicate form styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Minion Pro', serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Minion Pro', serif;
+    font-size: 16px;
+}
+
+/* Remove !important declarations */
+nav,
+#profile-image,
+.tree,
+.contact-container {
+    /* Remove all !important flags as they're not needed */
 }
 
 /* Update divider spacing */
