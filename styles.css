@@ -190,13 +190,12 @@ nav {
 
 /* Contact Form Styling */
 .contact-container {
+    padding: 40px 80px;
+    max-width: 1000px;
+    margin: 40px auto 0;
     display: flex;
     flex-direction: column;
     gap: 40px;
-    min-height: calc(100vh - 80px);
-    padding: 60px 80px;
-    max-width: 1000px;
-    margin: 40px auto 0;
 }
 
 .heading {
@@ -239,6 +238,9 @@ textarea:focus {
 }
 
 #send-button {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
     background-color: #C58383;
     color: white;
     border: none;
@@ -249,6 +251,31 @@ textarea:focus {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+#send-button::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(27, 18, 18, 0.2);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1);
+    transform-origin: 50% 50%;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+#send-button:hover::after {
+    opacity: 0.3;
+    transform: scale(100, 100);
+}
+
+#send-button.active::after {
+    opacity: 0;
+    transform: scale(0, 0);
+    transition: 0s;
 }
 
 #send-button:hover {
@@ -333,6 +360,8 @@ textarea:focus {
 .tree summary::before {
     z-index: 1;
     background: #696 url('/images/expand-collapse.svg') 0 0;
+    box-shadow: 0 1px 3px rgba(27, 18, 18, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tree details[open] > summary::before {
@@ -565,4 +594,132 @@ body {
     nav {
         padding: 15px 20px !important;
     }
+}
+
+/* Add these form-specific styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: 'Minion Pro', serif;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Minion Pro', serif;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Update contact container responsive styling */
+.contact-container {
+    padding: 40px 200px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Update tree view responsive styling */
+.tree {
+    padding: 40px 200px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+/* Update mobile styles */
+@media (max-width: 768px) {
+    .contact-container,
+    .tree {
+        padding: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    #send-button {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .tree {
+        font-size: 16px;
+        --spacing: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-container,
+    .tree {
+        padding: 15px;
+    }
+}
+
+/* Update tree summary icons */
+.tree summary::before {
+    z-index: 1;
+    background: #696 url('/images/expand-collapse.svg') 0 0;
+    background-size: cover; /* Make sure image covers the circle */
+    width: 24px; /* Set explicit width */
+    height: 24px; /* Set explicit height */
+    border-radius: 50%;
+    position: absolute;
+    left: calc(var(--spacing) - 12px); /* Center horizontally (half of width) */
+    top: calc(var(--spacing) / 2 - 12px); /* Center vertically (half of height) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effects to tree icons */
+.tree summary:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(27, 18, 18, 0.2);
+}
+
+/* Keep the open state styling */
+.tree details[open] > summary::before {
+    background-position: -24px 0; /* Match new width */
+}
+
+/* Add subtle transition to the lines */
+.tree ul li {
+    border-left: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+.tree ul li::before {
+    border: solid #ddd;
+    border-width: 0 0 2px 2px;
+    transition: border-color 0.3s ease;
+}
+
+/* Add hover effect to the lines */
+.tree li:hover > ul > li {
+    border-left-color: #696;
+}
+
+.tree li:hover > ul > li::before {
+    border-color: #696;
+}
+
+/* Update the circle behind the icon */
+.tree li::after {
+    width: 24px; /* Match icon width */
+    height: 24px; /* Match icon height */
+    left: calc(var(--spacing) - 12px); /* Match icon positioning */
+    top: calc(var(--spacing) / 2 - 12px); /* Match icon positioning */
+}
+
+/* Update tree spacing variable for better proportions */
+.tree {
+    --spacing: 2.5rem;
+    --radius: 12px;
 }
