@@ -30,6 +30,7 @@ body {
     font-family: 'Minion Pro', serif;
     font-size: 16px;
     overflow-x: hidden;
+    line-height: 1.6;
 }
 
 /* Homepage specific centering */
@@ -485,4 +486,83 @@ textarea:focus {
 .playlist-link {
     display: block;
     margin-top: 10px;
+}
+
+/* Update base font sizes and responsive rules */
+body {
+    font-size: 16px; /* Base font size */
+    line-height: 1.6;
+    padding: 20px;
+    padding-top: 80px;
+}
+
+/* Update content container sizing */
+.content,
+.contact-container,
+.tree {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 200px;
+}
+
+/* Unified mobile styling */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        padding-top: 70px;
+    }
+
+    /* Unified container padding for all pages */
+    .content,
+    .contact-container,
+    .tree {
+        padding: 20px;
+    }
+
+    /* Unified text sizing */
+    body,
+    .tree,
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    .form,
+    #send-button {
+        font-size: 16px !important;
+    }
+
+    /* Form elements sizing */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 15px;
+    }
+
+    /* Archive tree spacing */
+    .tree {
+        --spacing: 1.5rem;
+        margin: 20px auto;
+    }
+
+    /* Contact form spacing */
+    .contact-container {
+        gap: 30px;
+    }
+
+    #send-button {
+        padding: 15px 0;
+    }
+}
+
+/* Smaller mobile devices */
+@media (max-width: 480px) {
+    /* Keep consistent padding */
+    .content,
+    .contact-container,
+    .tree {
+        padding: 15px;
+    }
+
+    nav {
+        padding: 15px 20px !important;
+    }
 }
